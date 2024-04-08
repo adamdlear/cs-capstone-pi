@@ -13,7 +13,9 @@ results = model.train(
     device='mps'
 )
 
-# Export at onnx
+# Export as onnx
 model.export(format="onnx")
 # Export as torch
 model.export(format="torchscript")
+# Export as tensor
+model.export(format="tensorflow")
