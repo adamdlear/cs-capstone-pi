@@ -1,5 +1,4 @@
 import pyodbc
-
 import constants
 
 
@@ -16,12 +15,8 @@ class SQLConnection:
     def get_connection(self):
         if self.__connection is None:
             self.__connection = pyodbc.connect(
-                "DRIVER="+constants.DRIVER
-                + ";SERVER=tcp:"+constants.SERVER
-                + ";PORT=1433"
-                + ";DATABASE="+constants.DATABASE
-                + ";UID="+constants.USERNAME
-                + ";PWD="+constants.PASSWORD
+                "DRIVER="+constants.DRIVER+";SERVER=tcp:"+constants.SERVER+";PORT=1433;DATABASE=" +
+                constants.DATABASE+";UID="+constants.USERNAME+";PWD="+constants.PASSWORD
             )
 
         return self.__connection

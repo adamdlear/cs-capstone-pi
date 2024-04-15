@@ -17,8 +17,8 @@ def send_data():
         pothole_id += 1
 
     coordinates = ... #get_coords
-    latitude = ...
-    longitude = ...
+    latitude = 41.541409
+    longitude = -90.365754
 
     # Insert the new pothole record into the database
     insert_query = """INSERT INTO Potholes.PotholeLocation (PotholeID, Latitude, Longitude) VALUES (?, ?, ?)"""

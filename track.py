@@ -22,7 +22,7 @@ def track():
             if results[0].boxes.id is not None:
                 for id in results[0].boxes.id:
                     if id > max_id:
-                        # send_data
+                        send_data()
                         max_id = id
 
             annotated_frame = results[0].plot()
