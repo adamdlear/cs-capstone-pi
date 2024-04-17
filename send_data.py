@@ -1,3 +1,4 @@
+import geocoder
 from sql_connector import SQLConnection
 
 
@@ -16,13 +17,11 @@ def send_data():
     while pothole_id in used_ids:
         pothole_id += 1
 
-    coordinates = ... #get_coords
-    latitude = 41.541409
-    longitude = -90.365754
+    g = geocoder.ip('me')
 
     # Insert the new pothole record into the database
     insert_query = """INSERT INTO Potholes.PotholeLocation (PotholeID, Latitude, Longitude) VALUES (?, ?, ?)"""
-    cursor.execute(insert_query, (pothole_id, latitude, longitude))
+    cursor.execute(insert_query, (pothole_id, g.latlng[0], g.latlng[1]))
     conn.commit()
     cursor.close()
     return "Entry added successfully"
